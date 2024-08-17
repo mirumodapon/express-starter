@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql:8.4.2
+    environment:
+      MYSQL_ROOT_PASSWORD: kS9CP3Cg3JNug7gdSaZd
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.data/mysql:/var/lib/mysql
+    networks:
+      - nptucsai
+
+  radis:
+    container_name: redis
+    image: redis:7.4.0-alpine
+    entrypoint: redis-server /etc/redis/redis.conf
+    environment:
+      REDIS_PASSWORD: QDPmA5lGBshW2hZLvWfk
+    volumes:
+      - ./redis.conf/:/etc/redis/redis.conf
+    ports:
+      - 6379:6379
+    networks:
+      - nptucsai
+
+networks:
+  nptucsai:
+    driver: bridge
+
+

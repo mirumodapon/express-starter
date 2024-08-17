@@ -1,0 +1,25 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["es2020"],
+    "typeRoots": ["node_modules/@types"],
+    "declaration": false,
+    "baseUrl": "src",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "files": true
+  }
+}
